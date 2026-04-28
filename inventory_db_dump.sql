@@ -1,6 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `inventory_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `inventory_db`;
--- MySQL dump 10.13  Distrib 8.0.46, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.44, for Win64 (x86_64)
 --
 -- Host: localhost    Database: inventory_db
 -- ------------------------------------------------------
@@ -9,7 +7,7 @@ USE `inventory_db`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -38,7 +36,7 @@ CREATE TABLE `appliances` (
   UNIQUE KEY `serial_number` (`serial_number`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `appliances_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +45,7 @@ CREATE TABLE `appliances` (
 
 LOCK TABLES `appliances` WRITE;
 /*!40000 ALTER TABLE `appliances` DISABLE KEYS */;
-INSERT INTO `appliances` VALUES (4,3,'Washing Machine','Swan','DW3000','DW-5567-X2','2026-04-28','2028-04-28',888.00);
+INSERT INTO `appliances` VALUES (4,3,'Washing Machine','Swan','DW3000','DW-5567-X2','2026-04-28','2028-04-28',888.00),(5,4,'Washing Machine','SWan','WAM8888','8888','2026-04-28','2028-04-28',888.00);
 /*!40000 ALTER TABLE `appliances` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,7 +66,7 @@ CREATE TABLE `users` (
   `eircode` varchar(8) NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,17 +75,9 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'mike','jorden','Griffith college','+353 87 0348888','lijikun15@qq.com','D08 VK00'),(2,'luck','good','Griffith college','+353 87 8888888','luckgood@qq.com','D08 1234'),(3,'good','luck','Griffith College','+353 88 8888888','goodluck@gmail.com','D08 8888');
+INSERT INTO `users` VALUES (1,'mike','jorden','Griffith college','+353 87 0348888','lijikun15@qq.com','D08 VK00'),(2,'luck','good','Griffith college','+353 87 8888888','luckgood@qq.com','D08 1234'),(3,'good','luck','Griffith College','+353 88 8888888','goodluck@gmail.com','D08 8888'),(4,'JK','Li','Griffith college','+353 88 8888888','lijikun15@gmail.com','D08 8888');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'inventory_db'
---
-
---
--- Dumping routines for database 'inventory_db'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -98,4 +88,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-04-28 12:45:22
+-- Dump completed on 2026-04-28 13:38:46
